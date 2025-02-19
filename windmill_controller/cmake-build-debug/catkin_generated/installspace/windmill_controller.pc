@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: windmill_controller
+Description: Description of windmill_controller
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lwindmill_controller
+Requires: roscpp controller_interface hardware_interface pluginlib control_toolbox dynamic_reconfigure std_msgs realtime_tools geometry_msgs tf

@@ -1,0 +1,18 @@
+<launch>
+
+	<param name="robot_description" textfile="../urdf/windmill.urdf"/>
+	<rosparam file="../config/config.yaml" command="load"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    </include>
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" respawn="false"
+	 args="/controllers/windmill_controller
+	       /controllers/joint_state_controller
+            "/>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
+          args="-z 0.5 -param robot_description -urdf -model windmill" output="screen"/>
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d ../config/windmill.rviz"/>
+
+</launch>

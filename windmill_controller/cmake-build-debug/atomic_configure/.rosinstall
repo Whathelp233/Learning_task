@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/what/下载/catkin_ws/src/windmill_controller/cmake-build-debug/devel/setup.sh

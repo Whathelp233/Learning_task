@@ -1,0 +1,7 @@
+<library path="lib/libwindmill_controller">
+    <class name="windmill_controller/WindMillController"
+           type="windmill_controller::WindMillController"
+           base_class_type="controller_interface::ControllerBase">
+        <description> The SimpleChassisController is RoboMaster standard robot Chassis controller. It expects a EffortJointInterface type of hardware interface. </description>
+    </class>
+</library>
